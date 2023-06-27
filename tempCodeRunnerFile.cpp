@@ -1,5 +1,11 @@
- // for (int c=0;c<vect.size();c++){
-    //     for(int d=0;d<vect[c].size();d++){
-    //         cout<<vect[c][d]<<endl;
-    //     }
-    // }
+
+            matrix.push_back(removeFirstVal(v,i));
+        }
+    }
+}
+
+int main(){
+    vector<vector<string>>v={{}};
+    v.push_back({"a","b"});
+    for(int j=0;j<2;j++){
+        cout<<v[0][j]<<endl;
