@@ -5,7 +5,7 @@
 + **Challenges/Problems:** Only challenge was to change problem to sort on basis of size of subarra instead of sorting a 1D array
 
 ## **Problem # 28(b)**
-+ **Problem Statement:** we suppose that a list contains elements that are lists themselves.  But this time the objective is to sort the elements according to their length frequency; i.e. in the default, sorting is done ascendingly, lists with rare lengths are placed, others with a more frequent length come later.
++ **Problem Statement:** we suppose that a list contains elements that are lists themselves.  But this time the objective is to sort the elements according to their length frequency; i.e. in the default, sorting is done ascendingly, lists with rare lengths are placed, others with a more frequent length come later.\
 (lfsort '((a b c) (d e) (f g h) (d e) (i j k l) (m n) (o)))
 returned ouput like: ((i j k l) (o) (a b c) (f g h) (d e) (d e) (m n))
 + **Solution approach:** Again sorting was involved but the process was not the same. Now it is length frequency. Also the length is of the row which has to be observed. Solution approach's initial process was like counting sort: I first intialised an array whose index is the available lengths and then value of that index will be the number of rows having those lengths. Then, I did not used counting sort further, as counting sort sorts by index value but I wanted to sort by occurances(length frequncy),    but instead I used max value from array to further solve the problem which can be viewed in code
