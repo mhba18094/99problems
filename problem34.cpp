@@ -1,4 +1,6 @@
 #include <iostream>
+#include <chrono>
+using namespace std::chrono;
 using namespace std;
 
 int gcd(int first,int difference,int answer=1,int divisor=1){
@@ -27,5 +29,9 @@ int main(){
     int num;
     cout<<"Enter number for which you want to find euler totient function: ";
     cin>>num;
+    auto start = high_resolution_clock::now();
     cout<<"Euler Totient function is: "<<totient(num)<<endl;
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "\nTime taken by function : "<< duration.count() << " microseconds"<<endl;
 }

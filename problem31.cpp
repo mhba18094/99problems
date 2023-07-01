@@ -2,7 +2,7 @@
 using namespace std;
 
 bool checkPrime(int n,int divisor = 2){
-    if (divisor == n/2){
+    if (divisor == n){
         return true;
     }
     else if(n%divisor==0){
@@ -12,7 +12,7 @@ bool checkPrime(int n,int divisor = 2){
 }
 
 int main(){
-    if(checkPrime(1211)==1){
+    if(checkPrime(4)==1){
         cout<<"is Prime"<<endl;
     }else{
         cout<<"not Prime"<<endl;
