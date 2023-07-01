@@ -1,8 +1,8 @@
-**#99 Problems**
-**##Problem # 28(a)**
-**Problem Statement:** We suppose that a list contains elements that are lists themselves. The objective is to sort the elements of this list according to their length. E.g. short lists first, longer lists later, or vice versa. 
-**Solution approach:** As sorting was involved so i can sort using multiple sorting algorithms and sort on bases of size of subarrays in the given array so I used insertion sort. 
-**Challenges/Problems:** Only challenge was to change problem to sort on basis of size of subarra instead of sorting a 1D array
+#99 Problems
+##Problem # 28(a)
+Problem Statement: We suppose that a list contains elements that are lists themselves. The objective is to sort the elements of this list according to their length. E.g. short lists first, longer lists later, or vice versa. 
+Solution approach: As sorting was involved so i can sort using multiple sorting algorithms and sort on bases of size of subarrays in the given array so I used insertion sort. 
+Challenges/Problems: Only challenge was to change problem to sort on basis of size of subarra instead of sorting a 1D array
 
 **##Problem # 28(b)**
 **Problem Statement:** we suppose that a list contains elements that are lists themselves.  But this time the objective is to sort the elements according to their length frequency; i.e. in the default, sorting is done ascendingly, lists with rare lengths are placed, others with a more frequent length come later.
