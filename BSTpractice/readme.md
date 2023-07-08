@@ -1,0 +1,3 @@
+## **Finding that given binary tree is complete or not**
++ **Solution approach:** I first found heights of right and left subtree and then found their difference in heights which must not exceed 1. If anytime in question this difference exceeds 1, false is returned meaning binary tree is not complete 
++ **Challenges/Problems:** The challenge was to find recursion approach and finding an efficient way of solving this problem. I made two different functions to check height of a tree and other to check tree is complete binary or not and the latter function uses the first function 

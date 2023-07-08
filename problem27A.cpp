@@ -63,7 +63,8 @@ void combinations(int k, vector<char> v, vector<vector<char>> matrix = {}, int c
             // the less than in this code is used to check that for example we get acb but abc has already occured then to ignore the latter
             // combination by checking that the index position of current element (in original vector v) is always greater than the previous one
             {
-            } // do nothing if this condtion true
+                // do nothing if this condtion true
+            } 
 
             // if the current element is not being repeated or have occured before
             else

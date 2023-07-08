@@ -32,10 +32,8 @@ void combinations(int k, vector<char> v, vector<vector<char>> matrix = {}, int c
         }
         combinations(k, v, matrix, c + 1); //
     }
-    else if (c > matrix.size() and letter.size() == k)
-    { // if c(counter)>number of rows of matrix and also remember this code will generate
-      // combinations of different sizes so display elements of letter array when both
-      // of these conditions fulfilled
+    else if (c > matrix.size())
+    { // if c(counter)>number of rows of matrix then display combinations 
         for (int c = 0; c < letter.size(); c++)
         {
             cout << letter[c] << " ";
@@ -77,5 +75,5 @@ void combinations(int k, vector<char> v, vector<vector<char>> matrix = {}, int c
 
 int main()
 {
-    combinations(3, {'a', 'd', 'f', 'c', 'b', 'e', 'g'});
+    combinations(3, {'d', 'c', 'f', 'e', 'b','a'});
 }
