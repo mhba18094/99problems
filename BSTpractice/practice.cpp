@@ -41,7 +41,7 @@ bool checkHeightBalance(node *root) {
     else{
         return checkHeightBalance(root->left) and checkHeightBalance(root->right);
     }
-    return true;
+    // return true;
 }
 
 int main() {

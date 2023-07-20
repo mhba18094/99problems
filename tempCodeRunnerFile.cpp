@@ -1,1 +1,1 @@
-int height = 0;
+}
