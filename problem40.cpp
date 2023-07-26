@@ -27,6 +27,6 @@ pair<int,int> goldbach(int n){
 }
 
 int main(){
-    pair<int,int> solution = goldbach(123456);
+    pair<int,int> solution = goldbach(741396);
     cout<<"("<<solution.first<<","<<solution.second<<")"<<endl;
 }
