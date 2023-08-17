@@ -21,3 +21,18 @@ returned ouput like: ((i j k l) (o) (a b c) (f g h) (d e) (d e) (m n))
 + **Problem Statement:** Construct a list containing the prime factors and their multiplicity.
 + **Solution approach:** Same approach as problem 35. Only change is to now return array of tuples for which only check is added so that if element is already present then, specific element counter updated
 + **Challenges/Problems:** No such challenge instead of checking the math of the problem
+
+
+## **Problem # 82**
++ **Problem Statement:** Write a method named findCycles to find closed paths (cycles) starting at a given node in a graph. The method should return all cycles.
++ **Solution approach:** I modified the pre-existing depth-first search algorithm to solve this problem. Specifically, I modified the node visiting conditions which at the end gave me all the possible cycles. Modifications are
+    1. Storing every node in an array to keep track of the path of the cycle
+    2. Keeping track of the previous node
+    3. When the node is already visited then check that if that node is the previous node, a cycle is there and the path is printed
++ **Challenges/Problems:** I faced a lot of challenge in finding the _modification conditions_ (mentioned above) so that it gives all cycles in heirarichal way
+
+
+## **Problem # 84**
++ **Problem Statement:** Write a method minimalSpanningTree to construct the minimal spanning tree of a given labeled graph.
++ **Solution approach:** I used a pre-existing algorithm i.e prim's algorithm to solve this problem. I converted the simple algorithm to the code using different data structures
++ **Challenges/Problems:** The only challenge I faced is to writing the given _prim's algorithm_ as a c++ code which took the real time and effort.

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -21,23 +22,29 @@ vector<vector<int>> addEdge(vector<vector<int>>adjacensyList,int source, int des
         3) end is the ending of the desired path
         4) path vector is used to keep track of the path and then also used to display it
 */
-void findPaths(vector<vector<int>>adjacensyList,bool visited[],int start,int end,vector <int> path={}){
+void findCycle(vector<vector<int>>adjacensyList,bool visited[],int start,vector <int> path={},int prev=0){
     visited[start]=true; //Always set visited for that specific node
-    path.push_back(start); //also push it to the path vector
-    if(start==end){ //if we reach the destination
-        for(auto node:path){ //print the path
-            cout<<node<<" ";
+    path.push_back(start);//current node pushed back in path array
+    for(int edge:adjacensyList[start]){ //traverse the path for the graph
+        if(!visited[edge]){ //if node is not visted
+            findCycle(adjacensyList,visited,edge,path,start); //then visit it by dfs algo
         }
-        cout<<endl;
-    } 
-    else{ //otherwise
-        for(int edge:adjacensyList[start]){ //traverse the path for the graph
-            if(!visited[edge]){ //if node is not visted
-                findPaths(adjacensyList,visited,edge,end,path); //then visit it by dfs algo
+        //else if the node is already visited but
+        //the current neighbouring node and previous node not same
+        //this means nodes like 1---2 in an undirected graph are not considered as a cycle
+        //then do this
+        else if(edge != prev){ 
+            //find the location of cycle element and print only cycle instead of whole array
+            auto startingPoint = find(path.begin(), path.end(), edge) - path.begin(); 
+            for(int c = startingPoint;c<path.size();c++){
+                cout<<path[c]<<" ";
             }
+            //print the element on which the cylce ends i.e itself
+            cout<<edge<<endl;
         }
     }
-    visited[start]=false; //this line added so that when a node is traversed, it is again able to be traversed for other paths
+    //status of visiting of that node is turned false so that other possible cycles from other nodes to this nodes are not missed
+    visited[start]=false;
 }
 
 int main(){
@@ -75,5 +82,5 @@ int main(){
     for(int c=0;c<g.size();c++){
         visited[c]=false;
     } 
-    findPaths(g,visited,0,7);
+    findCycle(g,visited,0);
 }
