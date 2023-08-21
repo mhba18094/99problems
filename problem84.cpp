@@ -37,12 +37,15 @@ int main(){
         //finding minimum
         int nodeWithMinimumDistance;
         vector<int>distances;
+        //Pushing all latest distances everytime in an array to find the minimum one
         for(int counter=0;counter<9;counter++){
             distances.push_back(nodes[counter].distance);
         }
+        //Initial node is minimum for first iteration
         if (c==0){
             nodeWithMinimumDistance=0;
         }
+        //Else find minimum of array
         else{
             int min = 9999999;
             for(int current=1;current<9;current++){
@@ -52,10 +55,16 @@ int main(){
                 }
             }
         }
+        //Set that node as visited
         visited[nodeWithMinimumDistance]=true;
+        //Visit all its neigbours
         for(int neighbours=0;neighbours<graph.size();neighbours++){
+            //Distance of 0 in adjacensy matrix means no connection i.e not neighbour so only when 
+            //Distance > 0
             if(graph[nodeWithMinimumDistance][neighbours]!=0){
+                //If weight less than current weight and that node is not visited
                 if((graph[nodeWithMinimumDistance][neighbours]<nodes[neighbours].distance)and(visited[neighbours]==false)){
+                    //replace weight of neighbour with that value and make current node the parent of this neighbour node
                     nodes[neighbours].distance = graph[nodeWithMinimumDistance][neighbours];
                     nodes[neighbours].parent = nodeWithMinimumDistance;
                 }
