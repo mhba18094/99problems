@@ -28,7 +28,7 @@ returned ouput like: ((i j k l) (o) (a b c) (f g h) (d e) (d e) (m n))
 + **Solution approach:** I modified the pre-existing depth-first search algorithm to solve this problem. Specifically, I modified the node visiting conditions which at the end gave me all the possible cycles. Modifications are
     1. Storing every node in an array to keep track of the path of the cycle
     2. Keeping track of the previous node
-    3. When the node is already visited then check that if that node is the previous node, a cycle is there and the path is printed
+    3. When the node is already visited then check that if that node is not the previous node, a cycle is there and the path is printed
 + **Challenges/Problems:** I faced a lot of challenge in finding the _modification conditions_ (mentioned above) so that it gives all cycles in heirarichal way
 
 
